@@ -21,16 +21,17 @@
 						</div>
 
                         <div class="panel-body">
-                        <form class="form-horizontal form-validate-jquery" action="#">
+                        <form class="form-horizontal form-validate-jquery" method="POST" action="{{route('store.categorie')}}">
+                        {{ csrf_field() }}
 
 	<fieldset class="content-group">
 									<legend class="text-bold">Basic inputsvsvsv</legend>
 
 									<!-- Basic text input -->
 									<div class="form-group">
-										<label class="control-label col-lg-3">Basic text input <span class="text-danger">*</span></label>
+										<label class="control-label col-lg-3">Title <span class="text-danger">*</span></label>
 										<div class="col-lg-9">
-											<input type="text" name="basic" class="form-control" required="required" placeholder="Text input validation">
+											<input type="text" name="title" class="form-control" required="required" placeholder="Text input validation">
 										</div>
 									</div>
 									<!-- /basic text input -->
@@ -42,9 +43,9 @@
 
 									<!-- Basic textarea -->
 									<div class="form-group">
-										<label class="control-label col-lg-3">Basic textarea <span class="text-danger">*</span></label>
+										<label class="control-label col-lg-3">Description  <span class="text-danger">*</span></label>
 										<div class="col-lg-9">
-											<textarea rows="5" cols="5" name="textarea" class="form-control" required="required" placeholder="Default textarea"></textarea>
+											<textarea rows="5" cols="5" name="description" class="form-control" required="required" placeholder="Default textarea"></textarea>
 										</div>
 									</div>
 									<!-- /basic textarea -->
@@ -76,4 +77,4 @@
 
 </div>
 
-@endsect
+@endsection

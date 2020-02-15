@@ -24,6 +24,13 @@ class AdminController extends Controller
     }
     public function StoreCategorie(Request $request)
     {
+       
+        $categorie= new Categorie();
+        $categorie->title=$request->title;
+        $categorie->description=$request->description;
+        $categorie->save();
+
+        dd($categorie);
         
     }
 }

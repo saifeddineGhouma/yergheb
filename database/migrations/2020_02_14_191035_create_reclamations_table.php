@@ -20,6 +20,8 @@ class CreateReclamationsTable extends Migration
             $table->string('photo')->nullable();
             $table->integer('categorie_id')->nullable();
             $table->foreign('categorie_id')->references('id')->on('categories');
+            $table->integer('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
 
 
             $table->timestamps();
