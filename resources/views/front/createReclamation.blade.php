@@ -27,7 +27,7 @@
                                 <label class="mdl-textfield__label" for="name">title</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">
-                                <input class="mdl-textfield__input" type="text" name="desciption"id="email">
+                                <input class="mdl-textfield__input" type="text" name="description"id="email">
                                 <label class="mdl-textfield__label" for="email">description</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input">

@@ -33,4 +33,23 @@ class AdminController extends Controller
         dd($categorie);
         
     }
+    public function reclame()
+    {
+        $reclamations= Reclamation::all();
+
+        return view('Admin.reclame.index',compact('reclamations'));
+    }
+    public function editReclamation($id)
+    {
+        $reclame=Reclamation::find($id);
+
+        return view('Admin.reclame.edit',compact('reclame'));
+    }
+    public function updateReclame(Request $request,$id)
+    {
+        $reclame=Reclamation::find($id);
+
+        $reclame->statu=$request->statu;
+        $reclame->save();
+    }
 }

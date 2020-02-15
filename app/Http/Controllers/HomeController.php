@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Categorie;
 use App\Reclamation;
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -26,6 +27,11 @@ class HomeController extends Controller
     {
         return view('front.index');
     }
+    public function liste()
+    {
+        $reclamations=Reclamation::where('user_id',Auth::user()->id)->get();
+        return view('front.reclamations',compact('reclamations'));
+    }
     public function create()
     {
         $categories=Categorie::all();
@@ -37,7 +43,7 @@ class HomeController extends Controller
         $reclamation=new Reclamation();
         $reclamation->description=$request->description;
         $reclamation->categorie_id=$request->categorie_id;
-      
+        $reclamation->user_id=Auth::user()->id;
         $reclamation->adresse=$request->adresse;
         $path = $request->file('photo')->store('public/Photo');
         $reclamation->photo=$path;
